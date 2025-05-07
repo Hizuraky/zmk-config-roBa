@@ -26,11 +26,6 @@
             key-positions = <12 13>;
         };
 
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
-        };
-
         double_quotation {
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <20 21>;
@@ -43,10 +38,13 @@
     };
 
     macros {
-        to_layer_0: to_layer_0 {
+        kzk_mail: to_layer_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp K>, <&macro_tap>, <&kp K &kp Z &kp K &kp DOT>;
+            bindings =
+                <&kp K>,
+                <&macro_tap>,
+                <&kp K &kp Z &kp K &kp DOT &kp M &kp K &kp A &kp K &kp AT_SIGN &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
 
             label = "TO_LAYER_0";
         };
@@ -56,7 +54,7 @@
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
+            bindings = <&mo>, <&kzk_mail>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -119,7 +117,7 @@
             bindings = <
 &kp ESCAPE  &kp LG(LEFT)        &kp LG(RIGHT)  &kp LG(LS(KP_N3))  &kp LG(LS(NUMBER_4))                                     &kp LC(LEFT)  &kp LC(RIGHT)           &trans          &kp LC(UP_ARROW)         &kp ESCAPE
 &trans      &kp LC(LEFT_SHIFT)  &trans         &kp LEFT_ALT       &kp LS(LG(N4))        &trans                  &trans     &trans        &kp LG(LC(LEFT_ARROW))  &kp UP_ARROW    &kp LG(LC(RIGHT_ARROW))  &kp LC(K)
-&trans      &trans              &trans         &trans             &trans                &trans                  &trans     &trans        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &trans
+&kzk_mail   &trans              &trans         &trans             &trans                &trans                  &trans     &trans        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &trans
 &trans      &trans              &trans         &trans             &trans                &kp LG(LEFT_SHIFT)      &mkp LCLK  &mkp RCLK                                                                      &trans
             >;
         };
